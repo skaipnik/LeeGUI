@@ -46,6 +46,8 @@ class ExampleApp(design.Ui_Lee, MainWindow):
             print('No such file in directory')
         except IndexError:
             self.field.setText('В выбранном файле содержаться не корректные данные!')
+        except ValueError:
+            self.field.setText('В выбранном файле содержаться не корректные данные!')
         else:
             try:
                 path = field.get_path()
