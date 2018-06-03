@@ -45,16 +45,16 @@ class ExampleApp(design.Ui_Lee, MainWindow):
         except FileNotFoundError:
             print('No such file in directory')
         except IndexError:
-            self.field.setText('В выбранном файле содержаться не корректные данные!')
+            self.field.setText('В выбранном файле содержаться некорректные данные!')
         except ValueError:
-            self.field.setText('В выбранном файле содержаться не корректные данные!')
+            self.field.setText('В выбранном файле содержаться некорректные данные!')
         else:
             try:
                 path = field.get_path()
                 self.p = [p for p in path]
                 self.Way.setText(str(self.p))
             except:
-                self.Way.setText('Не возможно проложить путь.')
+                self.Way.setText('Невозможно проложить путь.')
     
     def save(self):
         try:
@@ -131,14 +131,14 @@ class ExampleApp(design.Ui_Lee, MainWindow):
         except ValueError:
             self.field.setText('Введите корректные данные!')
         except UnboundLocalError:
-            self.field.setText('Видимо какие-то поля не были заполнены. Так нельзя, заполните все поля!')
+            self.field.setText('Видимо какие-то поля не были заполнены. Так нельзя. Заполните все поля!')
         else:
             try:
                 path = field.get_path()
                 self.p = [p for p in path]
                 self.Way.setText(str(self.p))
             except:
-                self.Way.setText('Не возможно проложить путь.')
+                self.Way.setText('Невозможно проложить путь.')
 
         
 
