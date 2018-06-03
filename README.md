@@ -1,1 +1,1 @@
-"# LeeGUI" 
+Implementing the GUI on Python for the Lee algorithm. Based on the implementation of the [Lee algorithm by CorvoOrc](https://github.com/CorvoOrc/Lee-algorithm).
