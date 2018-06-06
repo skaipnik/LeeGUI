@@ -29,7 +29,10 @@ class ExampleApp(design.Ui_Lee, MainWindow):
             s = open(fname).read()
             array = [row.strip() for row in s]
             arr = self.split_on(array)
-            leng = int(arr[0][0])
+            p = 0
+            le = ''
+            for i in arr[0]: le += arr[0][p]; p += 1
+            leng = int(le)
             self.len.setText(str(leng))
             start = self.separation([i for i in self.split_two(arr[1])])
             self.start.setText(str(start))
@@ -132,6 +135,8 @@ class ExampleApp(design.Ui_Lee, MainWindow):
             self.field.setText('Введите корректные данные!')
         except UnboundLocalError:
             self.field.setText('Видимо какие-то поля не были заполнены. Так нельзя. Заполните все поля!')
+        except IndexError:
+            self.field.setText('Введите корректные данные!')
         else:
             try:
                 path = field.get_path()
