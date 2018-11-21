@@ -132,11 +132,11 @@ class ExampleApp(design.Ui_Lee, MainWindow):
             self.b = np.array(field._show())
             self.field.setText(str(self.b))
         except ValueError:
-            self.field.setText('Введите корректные данные!')
+            self.field.setText('Неккоректное значение аргумента')
         except UnboundLocalError:
             self.field.setText('Видимо какие-то поля не были заполнены. Так нельзя. Заполните все поля!')
         except IndexError:
-            self.field.setText('Введите корректные данные!')
+            self.field.setText('Ваши данные не входят в диапазон элементов')
         else:
             try:
                 path = field.get_path()
